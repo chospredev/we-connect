@@ -9,15 +9,15 @@ export class MoviesService {
     constructor(@InjectRepository(Movie)
      private moviesRepository: Repository<Movie>) {}
 
-    getMovies(): Promise<Movie[]> {
-        return this.moviesRepository.find();
+    async getMovies(): Promise<Movie[]> {
+        return await this.moviesRepository.find();
     }
 
-    getMovie(id: number): Promise<Movie> {
-        return this.moviesRepository.findOne({ where: { id } });
+    async getMovie(id: number): Promise<Movie> {
+        return await this.moviesRepository.findOne({ where: { id } });
     }
 
-    addMovie(movie: Movie): Promise<Movie> {
+    async addMovie(movie: Movie): Promise<Movie> {
         return this.moviesRepository.save(movie);
     }
 

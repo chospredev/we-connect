@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('movies')
 export class Movie {
@@ -8,12 +8,16 @@ export class Movie {
     @Column()
     title: string;
 
-    @Column()
-    description: string;
+    @Column({
+        nullable: true
+    })
+    genre: string;
 
     @Column()
     author: string;
 
-    @Column()
+    @CreateDateColumn({
+        nullable: true
+    })
     date: Date
 }

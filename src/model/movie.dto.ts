@@ -16,9 +16,9 @@ export class MovieDTO {
     title: string;
 
     @ApiProperty({
-        description: "Description of the particular movie."
+        description: "Genre of the particular movie."
     })
-    description: string;
+    genre: string;
 
     @ApiProperty({
         description: "Author of the particular movie.",
